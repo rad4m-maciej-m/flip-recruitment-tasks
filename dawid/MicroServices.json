@@ -1,0 +1,16 @@
+{
+	"apps": [
+		{
+			"name": "main",
+			"script": "./dist/main.js"
+		},
+		{
+			"name": "products",
+			"script": "./dist/Products/main.js"
+		},
+		{
+			"name": "tasks",
+			"script": "./dist/Tasks/main.js"
+		}
+	]
+}

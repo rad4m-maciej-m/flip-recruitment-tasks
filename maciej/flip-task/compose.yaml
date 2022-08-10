@@ -1,0 +1,29 @@
+version: '3.9'
+
+services:
+  app:
+    image: flip-task
+    restart: always
+    ports:
+      - 80:3000
+    environment:
+      PORT_HTTP: 3000
+      PORT_SERVICE_ORDERS: 3001
+      PORT_SERVICE_PRODUCTS: 3002
+      PORT_SERVICE_TASKS: 3003
+      PORT_SERVICE_USERS: 3004
+      DB_HOST: db
+      DB_USER: user
+      DB_PASSWORD: password
+      DB_DATABASE: flip-task
+      DB_PORT: 5432
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: flip-task
+      POSTGRES_PORT: 5432

@@ -1,0 +1,17 @@
+version: '3.9'
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: 'user'
+      POSTGRES_PASSWORD: 'david123'
+      POSTGRES_DB: 'db-flip'
+      POSTGRES_PORT: 5432
+    ports: 
+      - 5432:5432
+  flip:
+    image: img-flip
+    restart: always
+    ports: 
+      - 2000:3000

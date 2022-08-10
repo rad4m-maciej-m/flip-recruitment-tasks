@@ -1,0 +1,17 @@
+version: '3.9'
+services:
+  nestjs:
+    image: top-orders
+    restart: always
+    ports: 
+      - 3000:3000
+  database:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: 'user'
+      POSTGRES_PASSWORD: '1qazxsW@'
+      POSTGRES_DB: 'top-order'
+      POSTGRES_PORT: 5432
+    ports:
+      - 5432:5432
